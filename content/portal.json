@@ -1,0 +1,124 @@
+{
+  "lang": "zh",
+  "seo": {
+    "title": "为半导体设备与薄壁轴承准备的精密轴承 | LZK",
+    "description": "LZK 为晶圆搬运与精密平台提供精密轴承。标准系列可以直接选型，非标件按现有图纸对齐接口、预紧和材料。"
+  },
+  "nav": [
+    {
+      "label": "产品",
+      "href": "bearing-categories.html"
+    },
+    {
+      "label": "案例",
+      "href": "customer-cases.html"
+    },
+    {
+      "label": "检测",
+      "href": "inspection-equipment.html"
+    },
+    {
+      "label": "公司",
+      "href": "company.html"
+    },
+    {
+      "label": "联系",
+      "href": "contact.html"
+    }
+  ],
+  "fieldSchema": [],
+  "sections": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "kicker": "半导体设备",
+      "title": "为半导体设备与薄壁轴承准备的精密轴承",
+      "lede": "LZK 为晶圆搬运与精密平台提供精密轴承。标准系列可以直接选型，非标件按现有图纸对齐接口、预紧和材料。",
+      "docNo": "LZ-PORTAL-01",
+      "revision": "A",
+      "application": "晶圆搬运与精密平台",
+      "primaryLabel": "联系工程师",
+      "primaryHref": "contact.html",
+      "secondaryLabel": "查看轴承系列",
+      "secondaryHref": "bearing-categories.html",
+      "extras": {}
+    },
+    {
+      "id": "series",
+      "type": "series",
+      "title": "系列",
+      "lede": "下面四类覆盖晶圆搬运与精密平台里最常见的选型。型号保持原样，点进去仍是现有产品页。",
+      "items": [
+        {
+          "name": "深沟球轴承",
+          "codes": "6000 / 6200 / 6300 / 6800 / 6900",
+          "summary": "深沟球轴承用在晶圆搬运与精密平台的支承位。转速和载荷决定系列，型号本身不改。",
+          "href": "deep-groove-ball-bearings.html",
+          "extras": {}
+        },
+        {
+          "name": "交叉滚子轴承",
+          "codes": "RB / RE / RU / CRBH / SX",
+          "summary": "交叉滚子轴承用在晶圆搬运与精密平台里，由同一套圈承受轴向和径向载荷。",
+          "href": "bearing-categories.html",
+          "extras": {}
+        },
+        {
+          "name": "薄壁轴承",
+          "codes": "C / A / X",
+          "summary": "薄壁轴承用在晶圆搬运与精密平台里截面受限、又要保持旋转精度的位置。",
+          "href": "thin-section-bearings.html",
+          "extras": {}
+        },
+        {
+          "name": "非标与替代",
+          "codes": "图纸替代 / 材料优化 / 样件",
+          "summary": "非标与替代按晶圆搬运与精密平台的现有图纸对齐接口、材料和预紧。",
+          "href": "custom-engineering.html",
+          "extras": {}
+        }
+      ]
+    },
+    {
+      "id": "cases",
+      "type": "cases",
+      "title": "工况",
+      "lede": "晶圆搬运与精密平台里已经做过的几类旋转部位。",
+      "items": [
+        {
+          "industry": "机床",
+          "title": "转台的轴向和径向一起收",
+          "result": "机床沿用现有安装接口，按晶圆搬运与精密平台的载荷和空间确定游隙与预紧。",
+          "href": "customer-cases.html",
+          "extras": {}
+        },
+        {
+          "industry": "半导体",
+          "title": "搬运模组里的薄壁截面",
+          "result": "半导体沿用现有安装接口，按晶圆搬运与精密平台的载荷和空间确定游隙与预紧。",
+          "href": "customer-case-semiconductor.html",
+          "extras": {}
+        },
+        {
+          "industry": "医疗影像",
+          "title": "机架载荷下的非标替代",
+          "result": "医疗影像沿用现有安装接口，按晶圆搬运与精密平台的载荷和空间确定游隙与预紧。",
+          "href": "custom-engineering.html",
+          "extras": {}
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "type": "close",
+      "kicker": "选型",
+      "title": "把晶圆搬运与精密平台的工况发给我们",
+      "lede": "图纸、转速和载荷就够开始。我们按系列或非标替代回复。",
+      "label": "发送工况",
+      "href": "contact.html",
+      "extras": {}
+    }
+  ],
+  "updatedAt": "2026-11-18T18:07:51.132Z",
+  "publishedAt": "2026-11-18T18:07:24.140Z"
+}

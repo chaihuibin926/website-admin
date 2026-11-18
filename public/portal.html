@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>为半导体设备与薄壁轴承准备的精密轴承 | LZK</title>
+  <meta name="description" content="LZK 为晶圆搬运与精密平台提供精密轴承。标准系列可以直接选型，非标件按现有图纸对齐接口、预紧和材料。" />
+  <base href="/" />
+  <meta name="generator" content="lzk-portal-desk" />
+  <style>
+    :root {
+      --paper: #f3f6f3;
+      --ink: #141814;
+      --soft: #314036;
+      --line: #d2ddd4;
+      --green: #006e00;
+      --pale: #f7faf7;
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: light; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    body::before {
+      content: "";
+      display: block;
+      height: 6px;
+      background: var(--green);
+    }
+    h1, h2, h3, .brand, .num {
+      font-family: "Palatino Linotype", Palatino, "Songti SC", "SimSun", serif;
+      font-weight: 600;
+    }
+    a { color: inherit; }
+    a:focus-visible, .btn:focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 3px;
+    }
+    .wrap {
+      width: min(1120px, calc(100% - clamp(28px, 6vw, 88px)));
+      margin-inline: auto;
+    }
+    .top {
+      display: flex;
+      align-items: baseline;
+      gap: 1.25rem 1.75rem;
+      flex-wrap: wrap;
+      padding: 1.35rem 0 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      letter-spacing: 0.18em;
+      font-size: 1.05rem;
+    }
+    .mark {
+      width: 0.72rem;
+      height: 0.72rem;
+      background: var(--green);
+      display: inline-block;
+    }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1.2rem;
+      margin-left: auto;
+    }
+    .nav a { text-decoration: none; }
+    .nav a:hover { color: var(--green); }
+    .docno {
+      margin: 0;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      color: var(--soft);
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(220px, 0.75fr);
+      gap: clamp(2rem, 6vw, 5.5rem);
+      align-items: end;
+      padding: clamp(3.2rem, 8vw, 6.5rem) 0 clamp(2.5rem, 5vw, 4rem);
+    }
+    .kicker {
+      margin: 0;
+      color: var(--green);
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+    }
+    h1 {
+      margin: 0.4rem 0 0;
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      max-width: 9em;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+    h3 { margin: 0; font-size: 1.55rem; line-height: 1.2; }
+    .lede, .summary {
+      white-space: pre-line;
+      color: var(--soft);
+    }
+    .hero .lede {
+      max-width: 38em;
+      margin: 1.25rem 0 0;
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.1rem 1.4rem;
+      margin: 1.8rem 0 0;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--ink);
+      color: #f4f7f4;
+      text-decoration: none;
+      padding: 0.85rem 1.1rem;
+    }
+    .btn.light { background: #f4f7f4; color: var(--ink); }
+    .quiet {
+      color: var(--green);
+      text-underline-offset: 0.28em;
+    }
+    .plate {
+      border: 1px solid var(--ink);
+      background: var(--pale);
+      padding: 0.3rem 1rem 0.2rem;
+    }
+    .plate p {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 0;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .plate p:last-child { border-bottom: 0; }
+    .plate span { color: var(--soft); font-size: 0.82rem; }
+    .plate strong { font-weight: 600; text-align: right; }
+    .facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1.25rem;
+      margin: 0.75rem 0 0;
+    }
+    .facts div { display: flex; gap: 0.4rem; }
+    .facts dt { color: var(--soft); }
+    .facts dd { margin: 0; }
+    .close .facts { margin: 0 0 1.4rem; }
+    .close .facts dt { color: #d5e3d6; }
+    .series, .cases { padding-bottom: clamp(2rem, 5vw, 3.5rem); }
+    .series header, .cases header { max-width: 40rem; margin-bottom: 1.5rem; }
+    .series .lede, .cases .lede { margin: 0.7rem 0 0; }
+    .series ol { list-style: none; margin: 0; padding: 0; }
+    .series li {
+      display: grid;
+      grid-template-columns: 4.2rem minmax(0, 1fr) auto;
+      gap: 1rem 1.5rem;
+      align-items: start;
+      border-top: 1px solid var(--line);
+      padding: 1.45rem 0 1.35rem;
+    }
+    .num {
+      font-size: 1.7rem;
+      color: var(--green);
+      line-height: 1;
+    }
+    .codes {
+      margin: 0.3rem 0 0;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+    }
+    .summary { margin: 0.45rem 0 0; }
+    .more {
+      color: var(--green);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 0.05rem;
+      align-self: end;
+    }
+    .case-list {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      border-top: 1px solid var(--line);
+    }
+    .case-list article {
+      padding: 1.45rem 0 1.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .case-list article:first-child {
+      grid-row: 1 / span 2;
+      padding-right: 2rem;
+      border-right: 1px solid var(--line);
+    }
+    .case-list article:not(:first-child) { padding-left: 1.6rem; }
+    .case-list h3 { max-width: 12em; margin-top: 0.45rem; }
+    .case-list .more { display: inline-block; margin-top: 1rem; }
+    .close {
+      background: var(--ink);
+      color: #f4f7f4;
+      margin-top: clamp(2.5rem, 6vw, 4.5rem);
+    }
+    .close-inner {
+      width: min(1120px, calc(100% - clamp(28px, 6vw, 88px)));
+      margin-inline: auto;
+      padding: clamp(3rem, 7vw, 5.5rem) 0;
+    }
+    .close .kicker { color: #9dce9d; }
+    .close h2 { max-width: 14em; margin-top: 0.45rem; }
+    .close .lede { color: #d5e3d6; max-width: 36em; margin: 1rem 0 1.5rem; }
+    .foot {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      justify-content: space-between;
+      padding: 1.2rem 0 2rem;
+      color: var(--soft);
+      font-size: 0.88rem;
+    }
+    .foot p { margin: 0; }
+    .foot a { color: var(--green); }
+    @media (max-width: 800px) {
+      .nav { margin-left: 0; }
+      .hero, .case-list { grid-template-columns: 1fr; }
+      .series li { grid-template-columns: 3rem minmax(0, 1fr); }
+      .series li .more { grid-column: 2; justify-self: start; }
+      .case-list article:first-child {
+        grid-row: auto;
+        padding-right: 0;
+        border-right: 0;
+      }
+      .case-list article:not(:first-child) { padding-left: 0; }
+      h1 { max-width: none; }
+    }
+    @media print {
+      body::before { display: none; }
+      .close { background: white; color: black; }
+      .close .lede, .close .kicker { color: black; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top wrap">
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span>LZK</a>
+    <nav class="nav" aria-label="导航"><a href="bearing-categories.html">产品</a><a href="customer-cases.html">案例</a><a href="inspection-equipment.html">检测</a><a href="company.html">公司</a><a href="contact.html">联系</a></nav>
+    <p class="docno">LZ-PORTAL-01</p>
+  </header>
+  <main><div class="wrap"><section class="hero" id="hero">
+      <div class="hero-copy">
+        <p class="kicker">半导体设备</p>
+        <h1>为半导体设备与薄壁轴承准备的精密轴承</h1>
+        <p class="lede">LZK 为晶圆搬运与精密平台提供精密轴承。标准系列可以直接选型，非标件按现有图纸对齐接口、预紧和材料。</p>
+        <p class="actions">
+          <a class="btn" href="contact.html">联系工程师</a>
+          <a class="quiet" href="bearing-categories.html">查看轴承系列</a>
+        </p>
+      </div>
+      <aside class="plate" aria-label="图号">
+        <p><span>图号</span><strong>LZ-PORTAL-01</strong></p>
+        <p><span>版次</span><strong>A</strong></p>
+        <p><span>用途</span><strong>晶圆搬运与精密平台</strong></p>
+        <p><span>日期</span><strong>2026.11.19</strong></p>
+        
+      </aside>
+    </section><section class="series" id="series">
+      <header>
+        <h2>系列</h2>
+        <p class="lede">下面四类覆盖晶圆搬运与精密平台里最常见的选型。型号保持原样，点进去仍是现有产品页。</p>
+      </header>
+      <ol><li>
+          <span class="num">01</span>
+          <div>
+            <h3>深沟球轴承</h3>
+            <p class="codes">6000 / 6200 / 6300 / 6800 / 6900</p>
+            <p class="summary">深沟球轴承用在晶圆搬运与精密平台的支承位。转速和载荷决定系列，型号本身不改。</p>
+            
+          </div>
+          <a class="more" href="deep-groove-ball-bearings.html">规格</a>
+        </li><li>
+          <span class="num">02</span>
+          <div>
+            <h3>交叉滚子轴承</h3>
+            <p class="codes">RB / RE / RU / CRBH / SX</p>
+            <p class="summary">交叉滚子轴承用在晶圆搬运与精密平台里，由同一套圈承受轴向和径向载荷。</p>
+            
+          </div>
+          <a class="more" href="bearing-categories.html">规格</a>
+        </li><li>
+          <span class="num">03</span>
+          <div>
+            <h3>薄壁轴承</h3>
+            <p class="codes">C / A / X</p>
+            <p class="summary">薄壁轴承用在晶圆搬运与精密平台里截面受限、又要保持旋转精度的位置。</p>
+            
+          </div>
+          <a class="more" href="thin-section-bearings.html">规格</a>
+        </li><li>
+          <span class="num">04</span>
+          <div>
+            <h3>非标与替代</h3>
+            <p class="codes">图纸替代 / 材料优化 / 样件</p>
+            <p class="summary">非标与替代按晶圆搬运与精密平台的现有图纸对齐接口、材料和预紧。</p>
+            
+          </div>
+          <a class="more" href="custom-engineering.html">规格</a>
+        </li></ol>
+    </section><section class="cases" id="cases">
+      <header>
+        <h2>工况</h2>
+        <p class="lede">晶圆搬运与精密平台里已经做过的几类旋转部位。</p>
+      </header>
+      <div class="case-list"><article>
+          <p class="kicker">机床</p>
+          <h3>转台的轴向和径向一起收</h3>
+          <p class="summary">机床沿用现有安装接口，按晶圆搬运与精密平台的载荷和空间确定游隙与预紧。</p>
+          
+          <a class="more" href="customer-cases.html">案例</a>
+        </article><article>
+          <p class="kicker">半导体</p>
+          <h3>搬运模组里的薄壁截面</h3>
+          <p class="summary">半导体沿用现有安装接口，按晶圆搬运与精密平台的载荷和空间确定游隙与预紧。</p>
+          
+          <a class="more" href="customer-case-semiconductor.html">案例</a>
+        </article><article>
+          <p class="kicker">医疗影像</p>
+          <h3>机架载荷下的非标替代</h3>
+          <p class="summary">医疗影像沿用现有安装接口，按晶圆搬运与精密平台的载荷和空间确定游隙与预紧。</p>
+          
+          <a class="more" href="custom-engineering.html">案例</a>
+        </article></div>
+    </section></div><section class="close" id="close">
+    <div class="close-inner">
+      <p class="kicker">选型</p>
+      <h2>把晶圆搬运与精密平台的工况发给我们</h2>
+      <p class="lede">图纸、转速和载荷就够开始。我们按系列或非标替代回复。</p>
+      
+      <a class="btn light" href="contact.html">发送工况</a>
+    </div>
+  </section></main>
+  <footer class="foot wrap">
+    <p>LZK 精密轴承</p>
+    <p>本页由门户编排台生成 · <a href="/admin">编排台</a></p>
+  </footer>
+</body>
+</html>
