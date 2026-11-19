@@ -82,7 +82,7 @@ export function Studio({ initial }: { initial: PortalDocument }) {
       const next = applyFieldSchema(doc, fields);
       setDoc(next);
       setFieldJson(JSON.stringify(next.fieldSchema, null, 2));
-      setNote("已按这份字段 JSON 补上输入框。发布后，有内容的字段会出现在静态页上。");
+      setNote("已按这份字段 JSON 补上输入框。发布后，有内容的字段会出现在门户页上。");
     } catch (error) {
       setNote(error instanceof Error ? error.message : "这份 JSON 不能用");
     }
@@ -103,12 +103,12 @@ export function Studio({ initial }: { initial: PortalDocument }) {
     setSaved(result.doc);
     if (kind === "publish") {
       const href = `/portal?v=${Date.now()}`;
-      setNote("已写成 public/portal.html。打开的就是这张静态页。");
+      setNote("已发布。打开的就是这次发布的门户页。");
       if (popup) popup.location.href = href;
       return;
     }
     if (kind === "preview") {
-      setNote("预览的是刚刚保存的稿，还没有覆盖已发布的静态页。");
+      setNote("预览的是刚刚保存的稿。已发布的门户页仍是上一版。");
       if (popup) popup.location.href = `/admin/preview?v=${Date.now()}`;
       return;
     }
@@ -136,7 +136,7 @@ export function Studio({ initial }: { initial: PortalDocument }) {
               {busy === "preview" ? "正在打开" : "预览"}
             </button>
             <button className="btn" type="button" disabled={busy !== ""} onClick={() => void persist("publish")}>
-              {busy === "publish" ? "正在发布" : "发布静态页"}
+              {busy === "publish" ? "正在发布" : "发布"}
             </button>
           </div>
         </div>
@@ -169,8 +169,7 @@ export function Studio({ initial }: { initial: PortalDocument }) {
               <h1>用要点起草首页</h1>
             </div>
             <p className="studio-lead">
-              写下行业、语气或语言。起草只改文案，链接、图号和区块顺序保持不动。字段结构在下一块单独生成。满意后发布，生成
-              public/portal.html。
+              写下行业、语气或语言。起草只改文案，链接、图号和区块顺序保持不动。字段结构在下一块单独生成。满意后发布，门户页按这份稿现渲染。
             </p>
             <label className="field" htmlFor="brief-input">
               <span>要点</span>

@@ -235,6 +235,6 @@ export function proposeFields(doc: PortalDocument, brief: string) {
   if (added.length === 0) throw new Error("这些字段已经在结构里。");
   return {
     doc: applyFieldSchema(doc, [...doc.fieldSchema, ...added]),
-    note: `已生成字段 JSON：${added.map((field) => `${field.label}（${field.scope}）`).join("、")}。对应输入框已经出现，发布后会画进静态页。`,
+    note: `已生成字段 JSON：${added.map((field) => `${field.label}（${field.scope}）`).join("、")}。对应输入框已经出现，发布后会出现在门户页上。`,
   };
 }

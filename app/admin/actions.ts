@@ -29,6 +29,7 @@ export async function publishAction(input: unknown): Promise<PortalActionResult>
     const doc = await publishPortal(parsePortal(input));
     revalidatePath("/admin");
     revalidatePath("/admin/preview");
+    revalidatePath("/portal");
     return { ok: true, doc };
   } catch (error) {
     return failed(error);

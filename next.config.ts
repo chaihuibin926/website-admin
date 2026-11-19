@@ -1,16 +1,5 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  async rewrites() {
-    return {
-      beforeFiles: [
-        {
-          source: "/portal",
-          destination: "/portal.html",
-        },
-      ],
-    };
-  },
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;
