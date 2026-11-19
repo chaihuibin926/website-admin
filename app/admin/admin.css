@@ -29,8 +29,9 @@ body:has(.studio-root) {
 }
 
 .studio-bar-inner,
-.studio-body {
-  width: min(980px, calc(100% - 32px));
+.studio-body,
+.bar-note {
+  width: min(720px, calc(100% - 40px));
   margin-inline: auto;
 }
 
@@ -59,8 +60,11 @@ body:has(.studio-root) {
   margin-top: 0.15rem;
 }
 
+.studio-status a {
+  color: #006e00;
+}
+
 .studio-actions,
-.brief-row,
 .move {
   display: flex;
   align-items: center;
@@ -68,116 +72,142 @@ body:has(.studio-root) {
 }
 
 .studio-body {
-  display: grid;
-  grid-template-columns: 168px minmax(0, 760px);
-  gap: 8px 28px;
-  align-items: start;
-  padding-bottom: 4rem;
+  padding-bottom: 5rem;
 }
 
-.studio-index {
-  position: sticky;
-  top: 5.2rem;
-  display: grid;
-  gap: 0.7rem;
-  padding-top: 1.6rem;
+.step {
+  padding-top: 2.2rem;
+  scroll-margin-top: 5.4rem;
 }
 
-.studio-index > a {
-  color: #243128;
-  text-decoration: none;
-  font-size: 0.92rem;
-}
-
-.studio-index > a:hover,
-.studio-index-note a:hover {
-  color: #006e00;
-}
-
-.studio-index-note {
-  margin: 1rem 0 0;
-  display: grid;
-  gap: 0.45rem;
-  color: #3d4a40;
-  font-size: 0.78rem;
-  line-height: 1.45;
-}
-
-.studio-index-note a {
-  color: #006e00;
-}
-
-.studio-sheet h1,
-.studio-sheet h2,
+.studio-body h1,
+.studio-body h2,
 .item h3 {
   font-family: "Palatino Linotype", Palatino, "Songti SC", "SimSun", serif;
   font-weight: 600;
 }
 
-.block {
-  padding: 1.8rem 0 0.4rem;
-  border-top: 1px solid #d2ddd4;
-}
-
-.brief {
-  border-top: 0;
-  padding-top: 1.6rem;
-}
-
-.block-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
-  margin-bottom: 0.8rem;
-}
-
-.studio-sheet h1 {
+.studio-body h1 {
   margin: 0;
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-size: clamp(2.1rem, 4vw, 2.7rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
 }
 
-.studio-sheet h2 {
+.studio-body h2 {
   margin: 0;
-  font-size: 1.7rem;
+  font-size: 1.55rem;
   letter-spacing: -0.03em;
 }
 
-.studio-sheet h2 span {
-  display: inline-block;
-  margin-right: 0.7rem;
-  color: #006e00;
-  font-size: 0.95rem;
-  letter-spacing: 0;
-}
-
 .studio-lead,
-.brief-row p,
 .studio-note {
   color: #314036;
   line-height: 1.65;
 }
 
 .studio-lead {
-  margin: 0 0 1rem;
-  max-width: 40em;
+  margin: 0.45rem 0 1rem;
+  max-width: 38em;
 }
 
-.brief-row {
-  align-items: baseline;
-  margin: 0.2rem 0 1rem;
-}
-
-.brief-row p,
 .studio-note {
   margin: 0;
   font-size: 0.92rem;
 }
 
-.studio-note {
-  margin-bottom: 0.6rem;
+.bar-note {
+  padding-bottom: 0.75rem;
+}
+
+.outline {
+  margin-top: 0.2rem;
+}
+
+.outline-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 1rem;
+  align-items: start;
+  border-top: 1px solid #d2ddd4;
+}
+
+.outline-item:last-child {
+  border-bottom: 1px solid #d2ddd4;
+}
+
+.outline-item summary {
+  display: grid;
+  grid-template-columns: 5.2rem minmax(0, 1fr) auto;
+  column-gap: 0.75rem;
+  align-items: baseline;
+  padding: 0.85rem 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.outline-item summary::-webkit-details-marker,
+.extra > summary::-webkit-details-marker {
+  display: none;
+}
+
+.outline-item summary:focus-visible,
+.extra > summary:focus-visible {
+  outline: 2px solid #006e00;
+  outline-offset: 3px;
+}
+
+.outline-kind,
+.outline-edit {
+  color: #006e00;
+  font-size: 0.82rem;
+}
+
+.when-open,
+details[open] .when-shut {
+  display: none;
+}
+
+details[open] .when-open {
+  display: inline;
+}
+
+.outline-preview {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: "Palatino Linotype", Palatino, "Songti SC", "SimSun", serif;
+  font-size: 1.12rem;
+}
+
+.outline-body {
+  padding: 0.1rem 0 0.6rem;
+}
+
+.move {
+  padding-top: 0.95rem;
+}
+
+.extra {
+  margin-top: 2.8rem;
+}
+
+.extra > summary {
+  width: fit-content;
+  cursor: pointer;
+  color: #006e00;
+  list-style: none;
+}
+
+.extra > summary {
+  font-size: 0.95rem;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+.extra-body h2 {
+  margin: 1.6rem 0 0.75rem;
+  font-size: 1.25rem;
 }
 
 .field {
@@ -206,15 +236,6 @@ body:has(.studio-root) {
 
 .field textarea {
   line-height: 1.6;
-}
-
-.field textarea.code {
-  font-family: "Cascadia Mono", "Sarasa Mono SC", Consolas, monospace;
-  font-size: 0.86rem;
-  line-height: 1.55;
-  border: 1px solid #b7c4b8;
-  padding: 0.75rem 0.85rem;
-  background: #f7faf7;
 }
 
 .field input:focus-visible,
@@ -255,16 +276,6 @@ body:has(.studio-root) {
   color: #f3f6f3;
   padding: 0.62rem 0.9rem;
   text-decoration: none;
-}
-
-.btn.green {
-  background: #006e00;
-  border-color: #006e00;
-}
-
-.btn.line {
-  background: transparent;
-  color: #141814;
 }
 
 .btn.text {
@@ -311,28 +322,13 @@ body:has(.studio-root) {
 
 @media (max-width: 860px) {
   .studio-bar-inner,
-  .studio-actions,
-  .brief-row {
+  .studio-actions {
     align-items: flex-start;
     flex-wrap: wrap;
   }
 
-  .studio-body {
-    display: block;
-  }
-
-  .studio-index {
-    position: static;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem 0.9rem;
-    padding: 0.9rem 0;
-    border-bottom: 1px solid #d2ddd4;
-  }
-
-  .studio-index-note {
-    flex-basis: 100%;
-    margin-top: 0.2rem;
+  .outline-item summary {
+    grid-template-columns: 4.4rem minmax(0, 1fr) auto;
   }
 
   .pair {

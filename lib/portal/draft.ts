@@ -170,7 +170,7 @@ function seriesSummary(name: string, focus: string, focusEn: string, english: bo
 export function draftFromBrief(doc: PortalDocument, brief: string) {
   const text = brief.replace(/<[^>]*>/g, "").replaceAll("\u0000", "").trim();
   if (text.length < 2) {
-    throw new Error("先写两点以上的要点，再起草。");
+    throw new Error("先写要改成哪个行业，例如「面向机床转台」。");
   }
 
   const english = /英文|英语|English/i.test(text);
