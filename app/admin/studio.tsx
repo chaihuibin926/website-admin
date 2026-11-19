@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
+import { useMemo, useRef, useState, type ReactNode } from "react";
 import { publishAction, saveDraftAction } from "@/app/admin/actions";
 import type { CaseItem, FieldDef, PortalDocument, Section, SeriesItem } from "@/lib/portal/types";
 
@@ -26,7 +26,9 @@ export function Studio({ initial }: { initial: PortalDocument }) {
   const [doc, setDoc] = useState(initial);
   const [saved, setSaved] = useState(initial);
   const [note, setNote] = useState("");
-  const [busy, setBusy] = useState<"" | "save" | "preview" | "publish">("");
+  const [busy, setBusy] = useState<"" | "save" | "preview" | "publish" | "excel">("");
+  const [excelTask, setExcelTask] = useState<"" | "export" | "import">("");
+  const fileRef = useRef<HTMLInputElement>(null);
   const dirty = useMemo(() => JSON.stringify(doc) !== JSON.stringify(saved), [doc, saved]);
 
   function patchSection(id: string, recipe: (section: Section) => Section) {
@@ -34,17 +36,6 @@ export function Studio({ initial }: { initial: PortalDocument }) {
       ...current,
       sections: current.sections.map((section) => (section.id === id ? recipe(section) : section)),
     }));
-  }
-
-  function moveSection(index: number, direction: -1 | 1) {
-    setDoc((current) => {
-      const target = index + direction;
-      if (target < 0 || target >= current.sections.length) return current;
-      const sections = current.sections.slice();
-      const [item] = sections.splice(index, 1);
-      sections.splice(target, 0, item);
-      return { ...current, sections };
-    });
   }
 
   async function persist(kind: "save" | "preview" | "publish") {
@@ -72,6 +63,47 @@ export function Studio({ initial }: { initial: PortalDocument }) {
       return;
     }
     setNote("已保存。");
+  }
+
+  async function onExport() {
+    setBusy("excel");
+    setExcelTask("export");
+    setNote("");
+    try {
+      const { downloadPortalWorkbook } = await import("@/lib/portal/workbook");
+      await downloadPortalWorkbook(doc);
+      setNote("已下载 Excel。在表格里改完，再点导入。");
+    } catch (error) {
+      setNote(error instanceof Error ? error.message : "没能导出 Excel");
+    } finally {
+      setBusy("");
+      setExcelTask("");
+    }
+  }
+
+  async function onImport(file: File) {
+    setBusy("excel");
+    setExcelTask("import");
+    setNote("");
+    try {
+      const { readPortalWorkbook } = await import("@/lib/portal/workbook");
+      const next = await readPortalWorkbook(doc, await file.arrayBuffer());
+      const result = await saveDraftAction(next);
+      if (!result.ok) {
+        setDoc(next);
+        setNote(result.message);
+        return;
+      }
+      setDoc(result.doc);
+      setSaved(result.doc);
+      setNote("已导入并保存。看一遍文字，确认后再发布。");
+    } catch (error) {
+      setNote(error instanceof Error ? error.message : "这份 Excel 不能导入");
+    } finally {
+      setBusy("");
+      setExcelTask("");
+      if (fileRef.current) fileRef.current.value = "";
+    }
   }
 
   return (
@@ -119,9 +151,27 @@ export function Studio({ initial }: { initial: PortalDocument }) {
       <main className="studio-body">
         <section className="step" id="copy">
           <h1>页面上的四段文字</h1>
-          <p className="studio-lead">这四段就是首页。点「修改」改某一段，右边可以调整顺序。</p>
+          <p className="studio-lead">点「修改」改某一段。导出的 Excel 第一行是页面字段，下面是现有内容，空行可以继续填。</p>
+          <div className="excel-row">
+            <button className="btn text" type="button" disabled={busy !== ""} onClick={() => void onExport()}>
+              {excelTask === "export" ? "正在导出" : "导出 Excel"}
+            </button>
+            <button className="btn text" type="button" disabled={busy !== ""} onClick={() => fileRef.current?.click()}>
+              {excelTask === "import" ? "正在导入" : "导入 Excel"}
+            </button>
+            <input
+              ref={fileRef}
+              className="excel-file"
+              type="file"
+              accept=".xlsx,.xls,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+              onChange={(event) => {
+                const file = event.target.files?.[0];
+                if (file) void onImport(file);
+              }}
+            />
+          </div>
             <div className="outline">
-              {doc.sections.map((section, index) => (
+              {doc.sections.map((section) => (
                 <div className="outline-item" key={section.id} id={section.id}>
                   <details>
                     <summary>
@@ -140,19 +190,6 @@ export function Studio({ initial }: { initial: PortalDocument }) {
                       />
                     </div>
                   </details>
-                  <div className="move">
-                    <button type="button" onClick={() => moveSection(index, -1)} disabled={index === 0} aria-label={`上移${SECTION_LABEL[section.type]}`}>
-                      上移
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => moveSection(index, 1)}
-                      disabled={index === doc.sections.length - 1}
-                      aria-label={`下移${SECTION_LABEL[section.type]}`}
-                    >
-                      下移
-                    </button>
-                  </div>
                 </div>
               ))}
             </div>
