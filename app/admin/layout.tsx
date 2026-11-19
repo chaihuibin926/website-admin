@@ -4,7 +4,7 @@ import "./admin.css";
 
 export const metadata: Metadata = {
   title: "门户编排 | LZK",
-  description: "用区块稿起草并发布 LZK 门户静态页。",
+  description: "用区块稿起草并发布 LZK 门户页。",
   robots: { index: false, follow: false },
 };
 
